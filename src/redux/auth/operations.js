@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export const swaggerApi = axios.create({
   baseURL: 'https://wallet.b.goit.study/api/',
-
 });
 
 const setToken = token => {
@@ -33,10 +32,10 @@ export const registerThunk = createAsyncThunk(
     } catch (error) {
       switch (error.response.status) {
         case 400:
-          toast.error(`Validation error: please check your data`);
+          toast.error(`Validation error: please check your information`);
           break;
         case 409:
-          toast.error(`Error: User with such email already exists`);
+          toast.error(`Error: This user already exists`);
           break;
         default:
           break;
